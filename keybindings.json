@@ -194,6 +194,19 @@
   },
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   {
+    // Move focus up in files explorer
+    "key": "i",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  {
+    // Move focus down in files explorer
+    "key": "k",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  {
     // Working as F5
     "key": "ctrl+alt+,",
     "command": "workbench.action.debug.run",
@@ -260,5 +273,52 @@
     "key": "alt+q",
     "command": "editor.action.organizeImports",
     "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.nextSideBarView",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "alt+i",
+    "command": "workbench.action.previousSideBarView",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "ctrl+alt+.",
+    "command": "workbench.action.debug.stop",
+    "when": "inDebugMode && !focusedSessionIsAttach"
+  },
+  // {
+  //   "key": "ctrl+k ctrl+1",
+  //   "command": "geminicodeassist.showinEditor",
+  //   "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
+  // },
+  {
+    "key": "ctrl+i",
+    "command": "-geminicodeassist.showinEditor",
+    "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
+  },
+  // {
+  //   "key": "ctrl+k ctrl+2",
+  //   "command": "codeium.openCodeiumCommand",
+  //   "when": "codeium.commandEnabled && editorTextFocus && !inlineSuggestionsVisible"
+  // },
+  {
+    "key": "ctrl+i",
+    "command": "-codeium.openCodeiumCommand",
+    "when": "codeium.commandEnabled && editorTextFocus && !inlineSuggestionsVisible"
+  },
+  {
+    "key": "shift+alt+;",
+    "command": "cursorWordPartLeftSelect"
+  },
+  {
+    "key": "shift+alt+'",
+    "command": "cursorWordPartRightSelect"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.chat.attachSelection"
   }
 ]
